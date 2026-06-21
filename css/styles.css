@@ -1,0 +1,80 @@
+/* Base typography and resets */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: #faf8f2;
+  color: #332b1f;
+  line-height: 1.6;
+}
+h1, h2, h3 { font-family: 'Minion Pro', 'Times New Roman', serif; font-weight: normal; }
+a { color: #8c5a2a; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Fine dining template */
+.fine-dining {
+  background: linear-gradient(to bottom, #fffaf5 0%, #f5f0e6 100%);
+  font-family: 'Georgia', serif;
+}
+.fine-dining .hero {
+  min-height: 60vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+  position: relative;
+}
+.fine-dining .hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+}
+.fine-dining .hero-content {
+  position: relative;
+  color: #fff;
+  max-width: 800px;
+}
+
+/* Casual cafe template */
+.casual-cafe {
+  background: #fdfcf9;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #2c2c2c;
+}
+.casual-cafe .hero {
+  min-height: 50vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+.casual-cafe .hero h1 { color: #6b4423; }
+
+/* Bar nightlife template */
+.bar-nightlife {
+  background: #1a120b;
+  color: #e6d7b8;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+.bar-nightlife .hero {
+  min-height: 70vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+}
+.bar-nightlife .hero-content {
+  max-width: 800px;
+}
+
+/* Common components */
+.container { max-width: 960px; margin: 0 auto; padding: 1rem; }
+.rating { color: #d4a017; }
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.875rem;
+  color: #777;
+}
