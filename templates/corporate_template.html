@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{business_name}} | Miami</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            font-family: 'Playfair Display', serif;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, rgba(10,10,10,0.9), rgba(20,20,20,0.8));
+            border-radius: 20px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(201,168,76,0.3);
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            color: #c9a84c;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .landmark-container {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        .landmark {
+            width: 300px;
+            height: 250px;
+        }
+        .rating {
+            font-size: 1.8rem;
+            margin: 25px 0;
+            color: #c9a84c;
+            letter-spacing: 0.5px;
+        }
+        .tagline {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: #e6d3aa;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.5;
+        }
+        .hot-items {
+            background: rgba(20,20,20,0.7);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(201,168,76,0.2);
+        }
+        .hot-items h2 {
+            color: #c9a84c;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .item {
+            background: rgba(10,10,10,0.5);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid rgba(201,168,76,0.2);
+            transition: transform 0.3s ease;
+        }
+        .item:hover {
+            transform: translateY(-5px);
+        }
+        .item h3 {
+            color: #ffeda6;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        .item p {
+            color: #cccccc;
+            font-size: 1rem;
+        }
+        .info-section {
+            background: rgba(20,20,20,0.6);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(201,168,76,0.2);
+        }
+        .info-section h2 {
+            color: #c9a84c;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            padding: 12px;
+            background: rgba(10,10,10,0.3);
+            border-radius: 8px;
+        }
+        .info-item svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+            color: #c9a84c;
+        }
+        .info-item span {
+            color: #e0e0e0;
+            font-size: 1.1rem;
+        }
+        .directions-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #c9a84c, #b8963d);
+            color: #0a0a0a;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin: 20px auto;
+            display: block;
+            width: fit-content;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .directions-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(201,168,76,0.4);
+        }
+        .flavor-text {
+            background: rgba(10,10,10,0.4);
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 4px solid #c9a84c;
+        }
+        .flavor-text p {
+            color: #d4c8a8;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(201,168,76,0.1);
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hot-items h2, .info-section h2 { font-size: 1.8rem; }
+            .items-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <h1>{{business_name}}</h1>
+            <div class="landmark-container">
+                <!-- CORPORATE/UPSCALE THEME: Brickell Bridge -->
+                <div class="landmark">
+                    <svg width="300" height="250" viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Watercolor wash background -->
+                        <defs>
+                            <linearGradient id="watercolor1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#c9a84c;stop-opacity:0.15" />
+                                <stop offset="100%" style="stop-color:#c9a84c;stop-opacity:0.05" />
+                            </linearGradient>
+                            <linearGradient id="watercolor2" x1="0%" y1="100%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.1" />
+                                <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.02" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Background watercolor -->
+                        <rect width="300" height="250" fill="url(#watercolor1)" />
+                        <circle cx="150" cy="120" r="80" fill="url(#watercolor2)" />
+
+                        <!-- Brickell Bridge outline -->
+                        <path d="M50,200 Q100,80 150,100 Q200,120 250,200"
+                              stroke="#c9a84c" stroke-width="3" fill="none" opacity="0.9"/>
+                        <path d="M75,180 Q125,100 175,120 Q225,140 225,180"
+                              stroke="#c9a84c" stroke-width="2" fill="none" opacity="0.7"/>
+                        <line x1="50" y1="200" x2="250" y2="200"
+                              stroke="#c9a84c" stroke-width="2" opacity="0.8"/>
+
+                        <!-- Water details -->
+                        <path d="M50,200 Q100,210 150,200 Q200,210 250,200"
+                              fill="none" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="rating">⭐ {{rating}} ({{reviewsCount}} reviews)</div>
+            <div class="tagline">{{tagline}}</div>
+        </section>
+
+        <!-- HOT SELLING ITEMS -->
+        <section class="hot-items">
+            <h2>What Everyone's Ordering</h2>
+            <div class="items-grid">
+                {{#each hotItems}}
+                <div class="item">
+                    <h3>{{name}}</h3>
+                    <p>{{description}}</p>
+                </div>
+                {{/each}}
+            </div>
+        </section>
+
+        <!-- INFO SECTION -->
+        <section class="info-section">
+            <h2>Location & Info</h2>
+            <div class="info-item">
+                <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12,2C8.13,2 5,5.13 5,9c0,5.25 7,13 7,13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+                <span>{{street}}, {{city}}, {{state}}</span>
+            </div>
+            <div class="info-item">
+                <svg viewBox="0 0 24 24"><path fill="currentColor" d="M6.62,10.79C8.06,13.62 12,16 12,16s3.94-2.38 5.38-5.21l-1.42-1.42C13.52,9.55 12,10.92 12,10.92s-1.52-1.37-2.96-2.11l-1.42,1.42zM12,4a2,2 0 0,1-2,2 2,2 0 0,1-2-2 2,2 0 0,1,4,0 2,2 0 0,1-2,2z"/></svg>
+                <span>{{phone}}</span>
+            </div>
+            <div class="info-item">
+                <a href="{{website}}" target="_blank">
+                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M19.93,9.93l-1.41-1.41L12,10.59V6h-2v4.59L5.48,4.52L4.06,5.94l5.66,5.66L4,12h2v4h4v-2h4.59l5.66,5.66l1.41-1.41L15.41,12l4.52-4.52z"/></svg>
+                    <span>Website</span>
+                </a>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query={{addressEncoded}}" class="directions-btn" target="_blank">
+                Get Directions
+            </a>
+            <div class="flavor-text">
+                <p>{{localFlavor}}</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>Part of the Miami Local Business Showcase • Data sourced from Google Places</p>
+        </footer>
+    </div>
+</body>
+</html>
