@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baiablu | Miami</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #fdf6ec;
+            color: #4a3c2c;
+            font-family: 'Lora', serif;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #fefefe, #f4e8d8);
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 12px rgba(180,150,110,0.15);
+            border: 1px solid rgba(200,150,100,0.2);
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #8b6f47;
+            font-weight: 600;
+        }
+        .landmark-container {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        .landmark {
+            width: 250px;
+            height: 200px;
+        }
+        .rating {
+            font-size: 1.6rem;
+            margin: 20px 0;
+            color: #b87333;
+            font-weight: 500;
+        }
+        .tagline {
+            font-size: 1.3rem;
+            color: #6b5b3f;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.5;
+            font-style: italic;
+        }
+        .hot-items {
+            background: rgba(252,245,235,0.8);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(200,150,100,0.15);
+            box-shadow: 0 2px 8px rgba(180,150,110,0.1);
+        }
+        .hot-items h2 {
+            color: #8b6f47;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 15px;
+        }
+        .item {
+            background: rgba(252,240,220,0.9);
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid rgba(200,150,100,0.15);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 6px rgba(180,150,110,0.1);
+        }
+        .item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(180,150,110,0.15);
+            background: rgba(252,240,220,1);
+        }
+        .item h3 {
+            color: #6b5b3f;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        .item p {
+            color: #5a4a3a;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+        .info-section {
+            background: rgba(252,245,235,0.9);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(200,150,100,0.15);
+            box-shadow: 0 2px 8px rgba(180,150,110,0.1);
+        }
+        .info-section h2 {
+            color: #8b6f47;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin: 12px 0;
+            padding: 10px;
+            background: rgba(252,235,205,0.9);
+            border-radius: 6px;
+            border: 1px solid rgba(200,150,100,0.1);
+        }
+        .info-item svg {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            color: #b87333;
+        }
+        .info-item a {
+            color: inherit;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .info-item span {
+            color: #5a4a3a;
+            font-size: 1rem;
+        }
+        .info-item a:hover span {
+            text-decoration: underline;
+            color: #8b6f47;
+        }
+        .directions-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #d4a574, #b87333);
+            color: #ffffff;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            margin: 15px auto;
+            display: block;
+            width: fit-content;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(184,115,51,0.3);
+            box-shadow: 0 2px 4px rgba(184,115,51,0.2);
+        }
+        .directions-btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 3px 8px rgba(184,115,51,0.3);
+        }
+        .flavor-text {
+            background: rgba(252,235,205,0.9);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 25px;
+            border-left: 3px solid #d4a574;
+            box-shadow: 0 2px 6px rgba(180,150,110,0.1);
+        }
+        .flavor-text p {
+            color: #5a4a3a;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #8b7b6a;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(200,150,100,0.15);
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hot-items h2, .info-section h2 { font-size: 1.6rem; }
+            .items-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Nunito:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <h1>Baiablu</h1>
+            <div class="landmark-container">
+                <!-- NEIGHBORHOOD FRIENDLY THEME: Vizcaya Museum -->
+                <div class="landmark">
+                    <svg width="250" height="200" viewBox="0 0 250 200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="watercolor1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#f4e8d8;stop-opacity:0.2" />
+                                <stop offset="100%" style="stop-color:#f2e6d8;stop-opacity:0.08" />
+                            </linearGradient>
+                            <linearGradient id="watercolor2" x1="0%" y1="100%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.15" />
+                                <stop offset="100%" style="stop-color:#fefefe;stop-opacity:0.05" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="250" height="200" fill="url(#watercolor1)" />
+                        <circle cx="125" cy="80" r="60" fill="url(#watercolor2)" />
+                        <path d="M40,165 Q90,120 125,140 Q160,120 210,165 L210,180 Q125,200 40,180z"
+                              fill="#d4a574" opacity="0.7"/>
+                        <path d="M50,170 Q100,150 125,170 Q150,150 200,170 Q200,185 50,185z"
+                              fill="none" stroke="#b87333" stroke-width="1.5" opacity="0.6"/>
+                        <rect x="85" y="90" width="80" height="50"
+                              fill="#c48a3f" opacity="0.8" stroke="#b87333" stroke-width="1"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="rating">⭐ 4.9 (364 reviews)</div>
+            <div class="tagline">Placeholder response</div>
+        </section>
+
+        <!-- HOT SELLING ITEMS -->
+        <section class="hot-items">
+            <h2>What Everyone's Ordering</h2>
+            <div class="items-grid">
+                {{#each hotItems}}
+                <div class="item">
+                    <h3>{{name}}</h3>
+                    <p>{{description}}</p>
+                </div>
+                {{/each}}
+            </div>
+        </section>
+
+        <!-- INFO SECTION -->
+        <section class="info-section">
+            <h2>Location & Info</h2>
+            <div class="info-item">
+                <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12,2C8.13,2 5,5.13 5,9c0,5.25 7,13 7,13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+                <span>3176 Commodore Plaza, Miami, Florida</span>
+            </div>
+            <div class="info-item">
+                <svg viewBox="0 0 24 24"><path fill="currentColor" d="M6.62,10.79C8.06,13.62 12,16 12,16s3.94-2.38 5.38-5.21l-1.42-1.42C13.52,9.55 12,10.92 12,10.92s-1.52-1.37-2.96-2.11l-1.42,1.42zM12,4a2,2 0 0,1-2,2 2,2 0 0,1-2-2 2,2 0 0,1,4,0 2,2 0 0,1-2,2z"/></svg>
+                <span>(786) 885-2242</span>
+            </div>
+            <div class="info-item">
+                <a href="https://baiablumiami.com/" target="_blank">
+                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M19.93,9.93l-1.41-1.41L12,10.59V6h-2v4.59L5.48,4.52L4.06,5.94l5.66,5.66L4,12h2v4h4v-2h4.59l5.66,5.66l1.41-1.41L15.41,12l4.52-4.52z"/></svg>
+                    <span>Website</span>
+                </a>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=3176%20Commodore%20Plaza,Miami,Florida" class="directions-btn" target="_blank">
+                Get Directions
+            </a>
+            <div class="flavor-text">
+                <p>Placeholder response</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>Part of the Miami Local Business Showcase • Data sourced from Google Places</p>
+        </footer>
+    </div>
+</body>
+</html>
